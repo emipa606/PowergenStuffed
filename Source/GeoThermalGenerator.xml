@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Name="BuildingBase" Abstract="True">
+    <category>Building</category>
+    <thingClass>Building</thingClass>
+    <selectable>true</selectable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>GeothermalGenerator</defName>
+    <label>geothermal generator</label>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/StuffedGeothermalPlant</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,6)</drawSize>
+      <damageData>
+        <rect>(0.3,0,5.4,6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <blockLight>true</blockLight>
+    <blockWind>true</blockWind>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToMake>6000</WorkToMake>
+      <Flammability>1.0</Flammability>
+      <Beauty>-40</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <description>Produces electricity from geothermal steam geysers. Must be placed on a geyser.</description>
+    <size>(6,6)</size>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>100</costStuffCount>
+    <costList>
+      <Steel>300</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>ThermalsStuffed.CompPowerPlantSteam</compClass>
+        <basePowerConsumption>-3600</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <rotatable>false</rotatable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <placeWorkers>
+      <li>PlaceWorker_OnSteamGeyser</li>
+    </placeWorkers>
+    <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+      <ignoreNeedsPower>true</ignoreNeedsPower>
+    </building>
+    <designationHotKey>Misc6</designationHotKey>
+    <researchPrerequisites>
+      <li>GeothermalPower</li>
+    </researchPrerequisites>
+  </ThingDef>
+</Defs>

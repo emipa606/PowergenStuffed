@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Name="BuildingBase" Abstract="True">
+    <category>Building</category>
+    <thingClass>Building</thingClass>
+    <selectable>true</selectable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <researchPrerequisites>
+      <li>SolarPanels</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>SolarGenerator</defName>
+    <label>solar generator</label>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/StuffedSolarCollector</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToMake>2500</WorkToMake>
+      <Flammability>1.0</Flammability>
+      <Beauty>10</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <description>Produces electricity from sunlight. Does not work in the dark.</description>
+    <size>(4,4)</size>
+    <building>
+      <ignoreNeedsPower>true</ignoreNeedsPower>
+    </building>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>25</costStuffCount>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>SolarsStuffed.CompPowerPlantSolar</compClass>
+        <basePowerConsumption>-1</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <designationHotKey>Misc5</designationHotKey>
+    <researchPrerequisites>
+      <li>Electricity</li>
+      <li>SolarPanels</li>
+    </researchPrerequisites>
+  </ThingDef>
+</Defs>

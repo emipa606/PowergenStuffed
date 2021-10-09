@@ -25,6 +25,12 @@
       <costStuffCount>50</costStuffCount>
     </value>
   </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="WindTurbine"]/graphicData</xpath>
+    <value>
+      <shaderType>CutoutComplex</shaderType>
+    </value>
+  </Operation>
   <Operation Class="PatchOperationReplace">
     <xpath>/Defs/ThingDef[defName="WindTurbine"]/comps/li[@Class="CompProperties_Power"]/compClass</xpath>
     <value>
@@ -57,6 +63,12 @@
         <li>Metallic</li>
       </stuffCategories>
       <costStuffCount>100</costStuffCount>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="GeothermalGenerator"]/graphicData</xpath>
+    <value>
+      <shaderType>CutoutComplex</shaderType>
     </value>
   </Operation>
   <Operation Class="PatchOperationReplace">
@@ -97,6 +109,12 @@
         <li>Metallic</li>
       </stuffCategories>
       <costStuffCount>25</costStuffCount>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="SolarGenerator"]/graphicData</xpath>
+    <value>
+      <shaderType>CutoutComplex</shaderType>
     </value>
   </Operation>
   <Operation Class="PatchOperationReplace">

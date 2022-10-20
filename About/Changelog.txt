@@ -1,5 +1,8 @@
 # Changelog for PowergenStuffed
 
+1.4.1 - Mod updated for 1.4 and passed autotests
+
+
 1.0.1.0 - Fixed the graphics for the stuffed buildings, as they were missing the shadowType so the masks were not applied. Added mask for the wind-turbine
 
 

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Wind turbine -->
+  <!-- <Operation Class="PatchOperationReplace"> -->
+  <!-- <xpath>/Defs/ThingDef[defName="WindTurbine"]/graphicData/texPath</xpath> -->
+  <!-- <value> -->
+  <!-- <texPath>Things/Building/WindTurbineBodyStuffed</texPath> -->
+  <!-- </value> -->
+  <!-- </Operation> -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="WindTurbine"]/costList</xpath>
+    <value>
+      <costList>
+        <Steel>50</Steel>
+        <ComponentIndustrial>2</ComponentIndustrial>
+      </costList>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="WindTurbine"]</xpath>
+    <value>
+      <stuffCategories>
+        <li>Metallic</li>
+      </stuffCategories>
+      <costStuffCount>50</costStuffCount>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="WindTurbine"]/graphicData</xpath>
+    <value>
+      <shaderType>CutoutComplex</shaderType>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="WindTurbine"]/comps/li[@Class="CompProperties_Power"]/compClass</xpath>
+    <value>
+      <compClass>PowergenStuffed.CompPowerPlantWind</compClass>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/ThingDef[defName="WindTurbine"]/constructEffect</xpath>
+  </Operation>
+  <!-- Geothermal generator -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="GeothermalGenerator"]/graphicData/texPath</xpath>
+    <value>
+      <texPath>Things/Building/StuffedGeothermalPlant</texPath>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="GeothermalGenerator"]/costList</xpath>
+    <value>
+      <costList>
+        <Steel>240</Steel>
+        <ComponentIndustrial>8</ComponentIndustrial>
+      </costList>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="GeothermalGenerator"]</xpath>
+    <value>
+      <stuffCategories>
+        <li>Metallic</li>
+      </stuffCategories>
+      <costStuffCount>100</costStuffCount>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="GeothermalGenerator"]/graphicData</xpath>
+    <value>
+      <shaderType>CutoutComplex</shaderType>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="GeothermalGenerator"]/comps/li[@Class="CompProperties_Power"]/compClass</xpath>
+    <value>
+      <compClass>PowergenStuffed.CompPowerPlantSteam</compClass>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/ThingDef[defName="GeothermalGenerator"]/constructEffect</xpath>
+  </Operation>
+  <!-- Solar generator -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="SolarGenerator"]/graphicData/texPath</xpath>
+    <value>
+      <texPath>Things/Building/StuffedSolarCollector</texPath>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="SolarGenerator"]/graphicData/graphicClass</xpath>
+    <value>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="SolarGenerator"]/costList</xpath>
+    <value>
+      <costList>
+        <Steel>75</Steel>
+        <ComponentIndustrial>3</ComponentIndustrial>
+      </costList>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="SolarGenerator"]</xpath>
+    <value>
+      <stuffCategories>
+        <li>Metallic</li>
+      </stuffCategories>
+      <costStuffCount>25</costStuffCount>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="SolarGenerator"]/graphicData</xpath>
+    <value>
+      <shaderType>CutoutComplex</shaderType>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="SolarGenerator"]/comps/li[@Class="CompProperties_Power"]/compClass</xpath>
+    <value>
+      <compClass>PowergenStuffed.CompPowerPlantSolar</compClass>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/ThingDef[defName="SolarGenerator"]/constructEffect</xpath>
+  </Operation>
+</Patch>

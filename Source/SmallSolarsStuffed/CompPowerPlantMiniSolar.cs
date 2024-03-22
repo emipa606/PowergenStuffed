@@ -2,7 +2,7 @@
 using UnityEngine;
 using Verse;
 
-namespace SmallSolarsStuffed;
+namespace PowergenStuffed;
 
 [StaticConstructorOnStartup]
 public class CompPowerPlantMiniSolar : CompPowerPlant

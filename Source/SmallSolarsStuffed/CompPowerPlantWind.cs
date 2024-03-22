@@ -35,11 +35,13 @@ public class CompPowerPlantWind : CompPowerPlant
     private static readonly Material WindTurbineBladesMat =
         MaterialPool.MatFrom("Things/Building/Power/WindTurbine/WindTurbineBlades");
 
-    private readonly List<Thing> windPathBlockedByThings = new List<Thing>();
+    public readonly int updateWeatherEveryXTicks = 250;
 
-    private readonly List<IntVec3> windPathBlockedCells = new List<IntVec3>();
+    private readonly List<Thing> windPathBlockedByThings = [];
 
-    private readonly List<IntVec3> windPathCells = new List<IntVec3>();
+    private readonly List<IntVec3> windPathBlockedCells = [];
+
+    private readonly List<IntVec3> windPathCells = [];
 
     private float cachedPowerOutput;
 
@@ -49,11 +51,9 @@ public class CompPowerPlantWind : CompPowerPlant
     private Sustainer sustainer;
     private int ticksSinceWeatherUpdate;
 
-    public int updateWeatherEveryXTicks = 250;
-
     protected override float DesiredPowerOutput => cachedPowerOutput;
 
-    public float PowerPercent => PowerOutput / (-Props.PowerConsumption * 1.5f * stuffFactor);
+    public float PowerPercent => PowerOutput / (-Props.PowerConsumption * MaxUsableWindIntensity * stuffFactor);
 
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {
@@ -108,7 +108,7 @@ public class CompPowerPlantWind : CompPowerPlant
         ticksSinceWeatherUpdate++;
         if (ticksSinceWeatherUpdate >= updateWeatherEveryXTicks)
         {
-            var num = Mathf.Min(parent.Map.windManager.WindSpeed, 1.5f);
+            var num = Mathf.Min(parent.Map.windManager.WindSpeed, MaxUsableWindIntensity);
             ticksSinceWeatherUpdate = 0;
             cachedPowerOutput = -(Props.PowerConsumption * num * stuffFactor);
             RecalculateBlockages();
@@ -117,7 +117,7 @@ public class CompPowerPlantWind : CompPowerPlant
                 var num2 = 0f;
                 for (var i = 0; i < windPathBlockedCells.Count; i++)
                 {
-                    num2 += cachedPowerOutput * 0.2f;
+                    num2 += cachedPowerOutput * PowerReductionPercentPerObstacle;
                 }
 
                 cachedPowerOutput -= num2;
@@ -130,7 +130,7 @@ public class CompPowerPlantWind : CompPowerPlant
 
         if (cachedPowerOutput > 0.01f)
         {
-            spinPosition += PowerPercent * 0.05f;
+            spinPosition += PowerPercent * SpinRateFactor;
         }
 
         if (sustainer == null || sustainer.Ended)
@@ -197,11 +197,11 @@ public class CompPowerPlantWind : CompPowerPlant
 
         if (thing != null)
         {
-            stringBuilder.Append("WindTurbine_WindPathIsBlockedBy".Translate() + " " + thing.Label);
+            stringBuilder.Append(TranslateWindPathIsBlockedBy.Translate() + " " + thing.Label);
         }
         else
         {
-            stringBuilder.Append("WindTurbine_WindPathIsBlockedByRoof".Translate());
+            stringBuilder.Append(TranslateWindPathIsBlockedByRoof.Translate());
         }
 
         return stringBuilder.ToString();

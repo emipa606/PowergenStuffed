@@ -1,15 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31605.320
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmallSolarsStuffed", "SmallSolarsStuffed\SmallSolarsStuffed.csproj", "{A36BEEB2-7379-475B-B537-827E34571962}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarsStuffed", "SolarsStuffed\SolarsStuffed.csproj", "{95562EB9-C11C-46F2-BE2E-34A81EA1A7AD}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThermalsStuffed", "ThermalsStuffed\ThermalsStuffed.csproj", "{1A3E3C35-11FA-4179-82B3-3C5168A52445}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurbinesStuffed", "TurbinesStuffed\TurbinesStuffed.csproj", "{76D4D287-CCF6-45BD-AC52-66673E78DBE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowergenStuffed", "SmallSolarsStuffed\PowergenStuffed.csproj", "{A36BEEB2-7379-475B-B537-827E34571962}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +15,6 @@ Global
 		{A36BEEB2-7379-475B-B537-827E34571962}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A36BEEB2-7379-475B-B537-827E34571962}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A36BEEB2-7379-475B-B537-827E34571962}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95562EB9-C11C-46F2-BE2E-34A81EA1A7AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95562EB9-C11C-46F2-BE2E-34A81EA1A7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95562EB9-C11C-46F2-BE2E-34A81EA1A7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95562EB9-C11C-46F2-BE2E-34A81EA1A7AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A3E3C35-11FA-4179-82B3-3C5168A52445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A3E3C35-11FA-4179-82B3-3C5168A52445}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A3E3C35-11FA-4179-82B3-3C5168A52445}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A3E3C35-11FA-4179-82B3-3C5168A52445}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76D4D287-CCF6-45BD-AC52-66673E78DBE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76D4D287-CCF6-45BD-AC52-66673E78DBE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76D4D287-CCF6-45BD-AC52-66673E78DBE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76D4D287-CCF6-45BD-AC52-66673E78DBE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

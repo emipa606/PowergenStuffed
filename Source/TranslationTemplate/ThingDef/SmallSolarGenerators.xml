@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: micro solar generator 3x3 -->
+  <MicroSolarGenerator.label>micro solar generator 3x3</MicroSolarGenerator.label>
+  <!-- EN: Produces electricity from sunlight. Does not work in the dark. -->
+  <MicroSolarGenerator.description>Produces electricity from sunlight. Does not work in the dark.</MicroSolarGenerator.description>
+  <!-- EN: mini solar generator 2x2 -->
+  <MiniSolarGenerator.label>mini solar generator 2x2</MiniSolarGenerator.label>
+  <!-- EN: Produces electricity from sunlight. Does not work in the dark. -->
+  <MiniSolarGenerator.description>Produces electricity from sunlight. Does not work in the dark.</MiniSolarGenerator.description>
+  <!-- EN: single solar generator 1x1 -->
+  <SingleSolarGenerator.label>single solar generator 1x1</SingleSolarGenerator.label>
+  <!-- EN: Produces electricity from sunlight. Does not work in the dark. -->
+  <SingleSolarGenerator.description>Produces electricity from sunlight. Does not work in the dark.</SingleSolarGenerator.description>
+</LanguageData>

@@ -45,10 +45,7 @@ public class CompPowerPlantSteam : CompPowerPlant
     public override void CompTick()
     {
         base.CompTick();
-        if (geyser == null)
-        {
-            geyser = (Building_SteamGeyser)parent.Map.thingGrid.ThingAt(parent.Position, ThingDefOf.SteamGeyser);
-        }
+        geyser ??= (Building_SteamGeyser)parent.Map.thingGrid.ThingAt(parent.Position, ThingDefOf.SteamGeyser);
 
         if (geyser != null)
         {
@@ -59,9 +56,9 @@ public class CompPowerPlantSteam : CompPowerPlant
         PowerOutput = steamPower;
     }
 
-    public override void PostDeSpawn(Map map)
+    public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
     {
-        base.PostDeSpawn(map);
+        base.PostDeSpawn(map, mode);
         if (geyser != null)
         {
             geyser.harvester = null;

@@ -20,7 +20,7 @@ public class CompPowerPlantWind : CompPowerPlant
 
     private const string TranslateWindPathIsBlockedByRoof = "WindTurbine_WindPathIsBlockedByRoof";
 
-    private static readonly float BladeWidth = 6.6f;
+    private const float bladeWidth = 6.6f;
     private static readonly float VerticalBladeOffset = 0.7f;
     private static readonly float HorizontalBladeOffset = -0.02f;
 
@@ -35,7 +35,7 @@ public class CompPowerPlantWind : CompPowerPlant
     private static readonly Material WindTurbineBladesMat =
         MaterialPool.MatFrom("Things/Building/Power/WindTurbine/WindTurbineBlades");
 
-    public readonly int updateWeatherEveryXTicks = 250;
+    private readonly int updateWeatherEveryXTicks = 250;
 
     private readonly List<Thing> windPathBlockedByThings = [];
 
@@ -46,20 +46,20 @@ public class CompPowerPlantWind : CompPowerPlant
     private float cachedPowerOutput;
 
     private float spinPosition;
-    public float stuffFactor;
+    private float stuffFactor;
 
     private Sustainer sustainer;
     private int ticksSinceWeatherUpdate;
 
     protected override float DesiredPowerOutput => cachedPowerOutput;
 
-    public float PowerPercent => PowerOutput / (-Props.PowerConsumption * MaxUsableWindIntensity * stuffFactor);
+    private float PowerPercent => PowerOutput / (-Props.PowerConsumption * MaxUsableWindIntensity * stuffFactor);
 
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {
         base.PostSpawnSetup(respawningAfterLoad);
         BarSize = new Vector2(parent.def.size.z - 0.95f, 0.14f);
-        RecalculateBlockages();
+        recalculateBlockages();
         spinPosition = Rand.Range(0f, 15f);
         if (!parent.def.MadeFromStuff)
         {
@@ -111,7 +111,7 @@ public class CompPowerPlantWind : CompPowerPlant
             var num = Mathf.Min(parent.Map.windManager.WindSpeed, MaxUsableWindIntensity);
             ticksSinceWeatherUpdate = 0;
             cachedPowerOutput = -(Props.PowerConsumption * num * stuffFactor);
-            RecalculateBlockages();
+            recalculateBlockages();
             if (windPathBlockedCells.Count > 0)
             {
                 var num2 = 0f;
@@ -162,7 +162,7 @@ public class CompPowerPlantWind : CompPowerPlant
         vector += parent.Rotation.FacingCell.ToVector3() * VerticalBladeOffset;
         vector += parent.Rotation.RighthandCell.ToVector3() * HorizontalBladeOffset;
         vector.y += 0.04054054f;
-        var num = BladeWidth * Mathf.Sin(spinPosition);
+        var num = bladeWidth * Mathf.Sin(spinPosition);
         if (num < 0f)
         {
             num *= -1f;
@@ -207,16 +207,16 @@ public class CompPowerPlantWind : CompPowerPlant
         return stringBuilder.ToString();
     }
 
-    public override void PostDeSpawn(Map map)
+    public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
     {
-        base.PostDeSpawn(map);
+        base.PostDeSpawn(map, mode);
         if (sustainer is { Ended: false })
         {
             sustainer.End();
         }
     }
 
-    private void RecalculateBlockages()
+    private void recalculateBlockages()
     {
         if (windPathCells.Count == 0)
         {

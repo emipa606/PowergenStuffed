@@ -9,7 +9,7 @@ public class CompPowerPlantSolar : CompPowerPlant
 {
     private const float NightPower = 0f;
 
-    private static readonly Vector2 BarSize = new Vector2(2.3f, 0.14f);
+    private static readonly Vector2 BarSize = new(2.3f, 0.14f);
 
     private static readonly Material PowerPlantSolarBarFilledMat =
         SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.5f, 0.475f, 0.1f));

@@ -1,0 +1,30 @@
+ManifestFileVersion: 0
+CRC: 1093104781
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 27b6a250f1d74e1a950f2814adf82708
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 27b6a250f1d74e1a950f2814adf82708
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Mlie.PowergenStuffed/Textures/Things/Building/StuffedSolarCollector_east.png
+- Assets/Data/Mlie.PowergenStuffed/Textures/Things/Building/Power/WindTurbine/WindTurbineBody_northm.png
+- Assets/Data/Mlie.PowergenStuffed/Textures/Things/Building/Power/WindTurbine/WindTurbineBody_eastm.png
+- Assets/Data/Mlie.PowergenStuffed/Textures/Things/Building/StuffedSolarCollector_south.png
+- Assets/Data/Mlie.PowergenStuffed/Textures/Things/Building/StuffedSolarCollector_southm.png
+- Assets/Data/Mlie.PowergenStuffed/Textures/Things/Building/StuffedGeothermalPlant.png
+- Assets/Data/Mlie.PowergenStuffed/Textures/Things/Building/Power/WindTurbine/WindTurbineBody_southm.png
+- Assets/Data/Mlie.PowergenStuffed/Textures/Things/Building/StuffedSolarCollector_northm.png
+- Assets/Data/Mlie.PowergenStuffed/Textures/Things/Building/StuffedSolarCollector_north.png
+- Assets/Data/Mlie.PowergenStuffed/Textures/Things/Building/StuffedGeothermalPlant_m.png
+- Assets/Data/Mlie.PowergenStuffed/Textures/Things/Building/StuffedSolarCollector_eastm.png
+Dependencies: []
